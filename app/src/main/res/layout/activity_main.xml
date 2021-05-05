@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contatos - By Henrique Sousa"
+            android:textSize="25sp"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:id="@+id/nomeEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome Completo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/telefoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefone"
+            android:ems="10"
+            android:inputType="phone"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+        <RadioGroup
+            android:id="@+id/telefoneRg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:layout_margin="5dp">
+            <RadioButton
+                android:id="@+id/comercialRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comercial"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/residencialRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Residencial"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/telefoneCelularCb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usar telefone celular" />
+
+        <LinearLayout
+            android:id="@+id/telefoneCelularLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/telefoneCelularEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone celular"
+                android:ems="10"
+                android:inputType="phone"
+                android:padding="5dp"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/siteEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Site Pessoa"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/salvarBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:onClick="onClickButtonSalvar"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/emailBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar e-mail"
+            android:onClick="onClickButtonEmail"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/ligarBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ligar para telefone"
+            android:onClick="onClickButtonLigar"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/siteBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acessar site pessoal"
+            android:onClick="onClickButtonSite"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/pdfBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exportar para pdf"
+            android:onClick="onClickButtonPdf"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+</ScrollView>
