@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.ads.pdm.contatos;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
@@ -38,19 +39,32 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickButtonSalvar(View view) {
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.salvarBt:
+                break;
+            case R.id.emailBt:
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{activityMainBinding.emailEt.getText().toString()});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contato");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, activityMainBinding.nomeEt.getText().toString());
+
+                startActivity(emailIntent);
+                break;
+            case R.id.ligarBt:
+                verificarPermissaoLigar();
+                break;
+            case R.id.siteBt:
+                Intent abrirNavegadorIntent = new Intent(Intent.ACTION_VIEW);
+                abrirNavegadorIntent.setData(Uri.parse(activityMainBinding.siteEt.getText().toString()));
+                startActivity(abrirNavegadorIntent);
+            case R.id.pdfBt:
+                break;
+        }
     }
 
-    public void onClickButtonEmail(View view) {
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{activityMainBinding.emailEt.getText().toString()});
-        emailIntent.setType("message/rfc822");
-
-        startActivity(Intent.createChooser(emailIntent, "Choose an Email client :"));
-    }
-
-    public void onClickButtonLigar(View view) {
+    public void verificarPermissaoLigar() {
         Intent ligarIntent = new Intent(Intent.ACTION_CALL);
         ligarIntent.setData(Uri.parse("tel:" + activityMainBinding.telefoneEt.getText().toString()));
 
@@ -66,12 +80,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickButtonSite(View view) {
-        Intent abrirNavegadorIntent = new Intent(Intent.ACTION_VIEW);
-        abrirNavegadorIntent.setData(Uri.parse(activityMainBinding.siteEt.getText().toString()));
-        startActivity(abrirNavegadorIntent);
-    }
-
-    public void onClickButtonPdf(View view) {
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == CALL_PHONE_PERMISSION_REQUEST_CODE) {
+            verificarPermissaoLigar();
+        }
     }
 }

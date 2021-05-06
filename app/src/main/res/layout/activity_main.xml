@@ -110,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salvar"
-            android:onClick="onClickButtonSalvar"
+            android:onClick="onClick"
             android:padding="5dp"
             android:layout_margin="5dp" />
 
@@ -119,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar e-mail"
-            android:onClick="onClickButtonEmail"
+            android:onClick="onClick"
             android:padding="5dp"
             android:layout_margin="5dp" />
 
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ligar para telefone"
-            android:onClick="onClickButtonLigar"
+            android:onClick="onClick"
             android:padding="5dp"
             android:layout_margin="5dp" />
 
@@ -137,7 +137,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Acessar site pessoal"
-            android:onClick="onClickButtonSite"
+            android:onClick="onClick"
             android:padding="5dp"
             android:layout_margin="5dp" />
 
@@ -146,7 +146,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Exportar para pdf"
-            android:onClick="onClickButtonPdf"
+            android:onClick="onClick"
             android:padding="5dp"
             android:layout_margin="5dp" />
     </LinearLayout>
