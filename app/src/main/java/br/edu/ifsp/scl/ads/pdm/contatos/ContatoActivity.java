@@ -12,43 +12,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 
-import br.edu.ifsp.scl.ads.pdm.contatos.databinding.ActivityMainBinding;
+import br.edu.ifsp.scl.ads.pdm.contatos.databinding.ActivityContatoBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class ContatoActivity extends AppCompatActivity {
 
-    private ActivityMainBinding activityMainBinding;
+    private ActivityContatoBinding activityContatoBinding;
+    private Contato contato;
     private final int CALL_PHONE_PERMISSION_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(activityMainBinding.getRoot());
-
-        //Listener telefone celular
-        activityMainBinding.telefoneCelularCb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(((CheckBox) view).isChecked()) {
-                    activityMainBinding.telefoneCelularLl.setVisibility(View.VISIBLE);
-                } else {
-                    activityMainBinding.telefoneCelularLl.setVisibility(View.GONE);
-                    activityMainBinding.telefoneCelularEt.setText("");
-                }
-            }
-        });
+        activityContatoBinding = ActivityContatoBinding.inflate(getLayoutInflater());
+        setContentView(activityContatoBinding.getRoot());
     }
 
     public void onClick(View view) {
+        contato = new Contato(
+                activityContatoBinding.nomeEt.getText().toString(),
+                activityContatoBinding.emailEt.getText().toString(),
+                activityContatoBinding.telefoneEt.getText().toString(),
+                activityContatoBinding.telefoneCelularEt.getText().toString(),
+                activityContatoBinding.siteEt.getText().toString()
+        );
+
         switch (view.getId()) {
             case R.id.salvarBt:
+                Intent retornoIntent = new Intent();
+                retornoIntent.putExtra(Intent.EXTRA_USER, contato);
+                setResult(RESULT_OK, retornoIntent);
+                finish();
                 break;
             case R.id.emailBt:
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                 emailIntent.setData(Uri.parse("mailto:"));
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{activityMainBinding.emailEt.getText().toString()});
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{activityContatoBinding.emailEt.getText().toString()});
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contato");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, activityMainBinding.nomeEt.getText().toString());
+                emailIntent.putExtra(Intent.EXTRA_TEXT, activityContatoBinding.nomeEt.getText().toString());
 
                 startActivity(emailIntent);
                 break;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.siteBt:
                 Intent abrirNavegadorIntent = new Intent(Intent.ACTION_VIEW);
-                abrirNavegadorIntent.setData(Uri.parse(activityMainBinding.siteEt.getText().toString()));
+                abrirNavegadorIntent.setData(Uri.parse(activityContatoBinding.siteEt.getText().toString()));
                 startActivity(abrirNavegadorIntent);
             case R.id.pdfBt:
                 break;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void verificarPermissaoLigar() {
         Intent ligarIntent = new Intent(Intent.ACTION_CALL);
-        ligarIntent.setData(Uri.parse("tel:" + activityMainBinding.telefoneEt.getText().toString()));
+        ligarIntent.setData(Uri.parse("tel:" + activityContatoBinding.telefoneEt.getText().toString()));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {

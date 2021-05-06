@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ContatoActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -69,31 +69,15 @@
                 android:text="Residencial"/>
         </RadioGroup>
 
-        <CheckBox
-            android:id="@+id/telefoneCelularCb"
+        <EditText
+            android:id="@+id/telefoneCelularEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Usar telefone celular" />
-
-        <LinearLayout
-            android:id="@+id/telefoneCelularLl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:hint="Telefone celular"
+            android:ems="10"
+            android:inputType="phone"
             android:padding="5dp"
-            android:layout_margin="5dp"
-            android:visibility="gone">
-
-            <EditText
-                android:id="@+id/telefoneCelularEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Telefone celular"
-                android:ems="10"
-                android:inputType="phone"
-                android:padding="5dp"
-                android:layout_margin="5dp"/>
-        </LinearLayout>
+            android:layout_margin="5dp"/>
 
         <EditText
             android:id="@+id/siteEt"
