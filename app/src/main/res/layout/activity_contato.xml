@@ -99,37 +99,10 @@
             android:layout_margin="5dp" />
 
         <Button
-            android:id="@+id/emailBt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enviar e-mail"
-            android:onClick="onClick"
-            android:padding="5dp"
-            android:layout_margin="5dp" />
-
-        <Button
-            android:id="@+id/ligarBt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ligar para telefone"
-            android:onClick="onClick"
-            android:padding="5dp"
-            android:layout_margin="5dp" />
-
-        <Button
-            android:id="@+id/siteBt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Acessar site pessoal"
-            android:onClick="onClick"
-            android:padding="5dp"
-            android:layout_margin="5dp" />
-
-        <Button
             android:id="@+id/pdfBt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exportar para pdf"
+            android:text="Gerar pdf"
             android:onClick="onClick"
             android:padding="5dp"
             android:layout_margin="5dp" />

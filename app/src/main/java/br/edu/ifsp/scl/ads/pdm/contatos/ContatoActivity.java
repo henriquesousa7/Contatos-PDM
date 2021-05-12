@@ -43,22 +43,6 @@ public class ContatoActivity extends AppCompatActivity {
                 setResult(RESULT_OK, retornoIntent);
                 finish();
                 break;
-            case R.id.emailBt:
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                emailIntent.setData(Uri.parse("mailto:"));
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{activityContatoBinding.emailEt.getText().toString()});
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contato");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, activityContatoBinding.nomeEt.getText().toString());
-
-                startActivity(emailIntent);
-                break;
-            case R.id.ligarBt:
-                verificarPermissaoLigar();
-                break;
-            case R.id.siteBt:
-                Intent abrirNavegadorIntent = new Intent(Intent.ACTION_VIEW);
-                abrirNavegadorIntent.setData(Uri.parse(activityContatoBinding.siteEt.getText().toString()));
-                startActivity(abrirNavegadorIntent);
             case R.id.pdfBt:
                 break;
         }
