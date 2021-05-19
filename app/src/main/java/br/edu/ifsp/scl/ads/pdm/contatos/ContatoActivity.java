@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -43,8 +44,10 @@ public class ContatoActivity extends AppCompatActivity {
             alterarAtivacaoViews(ativo);
             if (ativo) {
                 getSupportActionBar().setSubtitle("Edicao de contato");
+                activityContatoBinding.pdfBt.setVisibility(View.GONE);
             } else {
                 getSupportActionBar().setSubtitle("Detalhes de contato");
+                activityContatoBinding.salvarBt.setVisibility(View.GONE);
             }
 
             // Usando dados do contato para preencher valores das views
@@ -55,6 +58,7 @@ public class ContatoActivity extends AppCompatActivity {
             activityContatoBinding.siteEt.setText(contato.getSite());
         } else {
             getSupportActionBar().setSubtitle("Novo contato");
+            activityContatoBinding.pdfBt.setVisibility(View.GONE);
         }
     }
 
