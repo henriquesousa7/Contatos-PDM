@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -106,7 +107,7 @@ public class ContatoActivity extends AppCompatActivity {
 
     private void gerarDocumentoPdf() {
         // Pegando a alturar e a largura da View raiz para gerar a imagem que vai no pdf
-        View conteudo = activityContatoBinding.getRoot();
+        View conteudo = activityContatoBinding.inputsLL;
         int largura = conteudo.getWidth();
         int altura = conteudo.getHeight();
 

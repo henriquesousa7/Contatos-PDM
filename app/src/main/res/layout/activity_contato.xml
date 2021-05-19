@@ -17,77 +17,83 @@
             android:text="Contatos - By Henrique Sousa"
             android:textSize="25sp"
             android:gravity="center_horizontal" />
-
-        <EditText
-            android:id="@+id/nomeEt"
+        <LinearLayout
+            android:id="@+id/inputsLL"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome Completo"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:padding="5dp"
-            android:layout_margin="5dp" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/emailEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:padding="5dp"
-            android:layout_margin="5dp"/>
-
-        <EditText
-            android:id="@+id/telefoneEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Telefone"
-            android:ems="10"
-            android:inputType="phone"
-            android:padding="5dp"
-            android:layout_margin="5dp"/>
-
-        <RadioGroup
-            android:id="@+id/telefoneRg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:padding="5dp"
-            android:layout_margin="5dp">
-            <RadioButton
-                android:id="@+id/comercialRb"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/nomeEt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Comercial"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/residencialRb"
-                android:layout_width="wrap_content"
+                android:hint="Nome Completo"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:padding="5dp"
+                android:layout_margin="5dp" />
+
+            <EditText
+                android:id="@+id/emailEt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Residencial"/>
-        </RadioGroup>
+                android:hint="E-mail"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:padding="5dp"
+                android:layout_margin="5dp"/>
 
-        <EditText
-            android:id="@+id/telefoneCelularEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Telefone celular"
-            android:ems="10"
-            android:inputType="phone"
-            android:padding="5dp"
-            android:layout_margin="5dp"/>
+            <EditText
+                android:id="@+id/telefoneEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone"
+                android:ems="10"
+                android:inputType="phone"
+                android:padding="5dp"
+                android:layout_margin="5dp"/>
 
-        <EditText
-            android:id="@+id/siteEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Site Pessoa"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="5dp"
-            android:layout_margin="5dp" />
+            <RadioGroup
+                android:id="@+id/telefoneRg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"
+                android:layout_margin="5dp">
+                <RadioButton
+                    android:id="@+id/comercialRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comercial"
+                    android:checked="true"/>
+                <RadioButton
+                    android:id="@+id/residencialRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Residencial"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/telefoneCelularEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone celular"
+                android:ems="10"
+                android:inputType="phone"
+                android:padding="5dp"
+                android:layout_margin="5dp"/>
+
+            <EditText
+                android:id="@+id/siteEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Site Pessoa"
+                android:ems="10"
+                android:inputType="text"
+                android:padding="5dp"
+                android:layout_margin="5dp" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/salvarBt"
